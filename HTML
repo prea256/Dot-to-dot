@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Dot-to-Dot</title>
+  <style>
+    /* Add your CSS styling here */
+  </style>
+</head>
+<body>
+
+  <h1>Random Dot-to-Dot</h1>
+  
+  <div id="dot-to-dot-container">
+    <!-- Dots will be dynamically added here using JavaScript -->
+  </div>
+
+  <script>
+    // JavaScript code to generate random dot-to-dot
+    document.addEventListener("DOMContentLoaded", function() {
+      const dotContainer = document.getElementById("dot-to-dot-container");
+      
+      function getRandomNumber(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+
+      function createDot() {
+        const dot = document.createElement("div");
+        dot.className = "dot";
+        // Add additional styling or content here if needed
+        return dot;
+      }
+
+      function generateDotToDot() {
+        dotContainer.innerHTML = ""; // Clear previous dots
+        const dotCount = getRandomNumber(5, 15); // Adjust as needed
+
+        for (let i = 0; i < dotCount; i++) {
+          const dot = createDot();
+          dotContainer.appendChild(dot);
+        }
+      }
+
+      generateDotToDot(); // Initial generation
+
+      // Feel free to add event listeners or further customization
+    });
+  </script>
+
+</body>
+</html>
